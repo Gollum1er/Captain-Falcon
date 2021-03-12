@@ -1,14 +1,15 @@
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
 module.exports.run = (client, message, arguments) => {
-    let début = Date.now();
-    message.channel.send('Ping')
-        .then((m) => m.edit(`Pong : **${Date.now() - début}**ms`));
+    message.channel.send(`${message.author.tag} a le moral dans les chaussettes. https://tenor.com/view/sponge-bob-square-pants-sad-lonely-alone-hello-darkness-gif-16029856`)
+        .then(() => {
+            message.delete({ timeout: 1000 });
+        });
 
     const log = new MessageEmbed()
         .setColor("GREEN")
         .setThumbnail(client.user.displayAvatarURL())
-        .setTitle(`**Ping**`)
+        .setTitle(`**Sad**`)
         .addField("Executé par :", message.author.tag, true)
         .addField("Date :", moment.utc(message).format('LL'), true)
         .addField("Lieu :", `${message.guild} : ${message.channel}`, true)
@@ -16,13 +17,13 @@ module.exports.run = (client, message, arguments) => {
 
     const logChannel = client.channels.cache.get("816638389558181908");
     logChannel.send(log);
-
 };
 
 module.exports.help = {
-    name: 'ping',
-    description: `Renvoie le délai de connexion de l'utilisateur`,
+    name: 'sad',
+    description: 'Envoi un gif pour dire qu\'on est triste',
     arguments: false,
-    usage: "CaptainFalcon?ping",
+    usage: "CaptainFalcon?sad",
     category: 'membres'
+
 };

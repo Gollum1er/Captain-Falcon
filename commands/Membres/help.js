@@ -11,7 +11,7 @@ module.exports.run = (client, message, arguments) => {
             .setColor("PURPLE")
             .setTitle("**Help**")
             .addField("Liste des commandes categorisées par utilisations", "Pour plus d'informations sur une commande spécifique veuillez taper : \`CaptainFalcon?help <nom_de_la_commande>\`")
-            .setFooter("Captain Falcon#4446, bot de MIR | Gollum1er#2227");
+            .setFooter("Captain Falcon#2001, bot de MIR | Gollum1er#2227");
 
         for (const category of categoryList) {
             embed.addField(`${category}`, `${client.commands.filter(cat => cat.help.category === category.toLowerCase()).map(cmd => cmd.help.name).join(', ')}`);
@@ -24,7 +24,7 @@ module.exports.run = (client, message, arguments) => {
             .addField("Executé par :", message.author.tag, true)
             .addField("Date :", moment.utc(message).format('LL'), true)
             .addField("Lieu :", `${message.guild} : ${message.channel}`, true)
-            .setFooter("Captain Falcon#4446, bot de MIR | Gollum1er#2227");
+            .setFooter("Captain Falcon#2001, bot de MIR | Gollum1er#2227");
 
         const logChannel = client.channels.cache.get("816638389558181908");
         message.channel.send(embed);
@@ -40,7 +40,7 @@ module.exports.run = (client, message, arguments) => {
             .addField('Commande désirée :', command.help.name)
             .addField('Description', `${command.help.description}`)
             .addField('Usage', `${command.help.usage}`)
-            .setFooter("Captain Falcon#4446, bot de MIR | Gollum1er#2227");
+            .setFooter("Captain Falcon#2001, bot de MIR | Gollum1er#2227");
 
         const log = new MessageEmbed()
             .setColor("PURPLE")
@@ -50,7 +50,7 @@ module.exports.run = (client, message, arguments) => {
             .addField('Commande désirée :', command.help.name, true)
             .addField("Date :", moment.utc(message).format('LL'), true)
             .addField("Lieu :", `${message.guild} : ${message.channel}`, true)
-            .setFooter("Captain Falcon#4446, bot de MIR | Gollum1er#2227");
+            .setFooter("Captain Falcon#2001, bot de MIR | Gollum1er#2227");
 
         const logChannel = client.channels.cache.get("816638389558181908");
         message.channel.send(embed);

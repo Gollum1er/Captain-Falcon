@@ -18,7 +18,7 @@ module.exports.run = (client, message, arguments) => {
         .addField("Message", arguments.join(" "), false)
         .addField("Date :", moment.utc(message).format('LL'), true)
         .addField("Lieu :", `${message.guild} : ${message.channel}`, true)
-        .setFooter("Captain Falcon#4446, bot de MIR | Gollum1er#2227");
+        .setFooter("Captain Falcon#2001, bot de MIR | Gollum1er#2227");
 
     const logChannel = client.channels.cache.get("816638389558181908");
     logChannel.send(log);
